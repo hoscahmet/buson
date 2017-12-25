@@ -1,0 +1,41 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  
+  home: "Home Page"
+  signin: 'Sign in'
+  signup: 'Sign up'
+  exit: 'Exit'
+  settings: 'Settings'
+  change language: "Change Language:"
+  login: "Log in"
+  welcome: "Welcome to the Web Project homework."
+  bootstrap: "Build responsive, mobile-first projects on the web with the world's most popular front-end component library. Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery."
+  overview: "Components and options for laying out your Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes."
+  github: "GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere."
+  rails: "Learning to build a modern web application is daunting. Ruby on Rails makes it much easier and more fun. It includes everything you need to build fantastic applications, and you can learn it with the support of our large, friendly community.."
+  hello: "Welcome, "
+  settings: "Settings"
+  exit: "Exit"
+  singin: "Sing in"
+  singup: "Sing up"
+  git: "please click to 'homepage' for add and view posts."

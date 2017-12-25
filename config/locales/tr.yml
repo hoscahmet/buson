@@ -1,0 +1,20 @@
+tr: 
+    
+    home: 'Ana Sayfa'
+    signin: 'Oturum Aç'
+    signup: 'Üye Ol'
+    exit: 'Çıkış'
+    settings: 'Ayarlar'
+    change language: "Dili Değiştir:"
+    login: "Giriş"
+    welcome: "Web Proje ödevime hoşgeldiniz"
+    bootstrap: "Dünyanın en popüler ön uç bileşen kütüphanesi ile web üzerinde duyarlı, mobil ilk projeler oluşturun. Bootstrap, HTML, CSS ve JS ile geliştirme için açık kaynak kodlu bir araç kiti. Sass değişkenleriniz ve mixins'lerinizle, duyarlı grid sisteminizle, önceden hazırlanmış kapsamlı bileşenlerle ve jQuery'de oluşturulan güçlü eklentilerle fikirlerinizi hızlı bir şekilde prototip edin veya tüm uygulamanızı oluşturun."
+    overview: "Kaplar sarma da dahil olmak üzere, Bootstrap projenizi düzenlemek için bileşenler ve seçenekler, güçlü bir ızgara sistemi, esnek medya nesnesi ve duyarlı yardımcı sınıfları."
+    github: "GitHub, sürüm denetimi ve işbirliği için bir kod barındırma platformudur. Size ve diğer insanlara projelerin her yerinden birlikte çalışmalarını sağlar."
+    rails: "GitHub, sürüm denetimi ve işbirliği için bir kod barındırma platformudur. Size ve diğer insanlara projelerin her yerinden birlikte çalışmalarını sağlar."
+    hello: "Hoşgeldiniz, "
+    settings: "Ayarlar"
+    exit: "Çıkış"
+    singin: "Giriş"
+    singup: "Kayıt ol"
+    git: "Mesaj eklemek ve görüntülemek için lütfen anasayfa tuşuna basınız"

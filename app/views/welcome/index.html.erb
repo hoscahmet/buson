@@ -1,0 +1,268 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Projem</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<style>
+
+
+
+</style>
+<script>
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000}";
+        document.body.appendChild(css);
+    };
+  
+  
+  
+  
+  
+  
+  
+  $(document).ready(function () {
+    $('.material-button-toggle').on("click", function () {
+        $(this).toggleClass('open');
+        $('.option').toggleClass('scale-on');
+    });
+});
+</script>
+
+
+</head>
+<body >
+  
+  
+   <% if user_signed_in? %>
+        
+        
+        
+
+
+
+        <% else %>
+           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+           <h3></h3>
+
+<div class="container">
+	<div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="material-button-anim">
+          <ul class="list-inline" id="options">
+            <li class="option">
+              
+              <button class="material-button option1" type="button">
+                <span class="fa fa-sign-in" aria-hidden="true"><br><%= link_to(t('singin'), new_user_session_path) %></br></span>
+              </button>
+            </li>
+            <li class="option">
+              <button class="material-button option2" type="button">
+                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+              </button>
+            </li>
+            <li class="option">
+              <button class="material-button option3" type="button">
+                <span class="fa fa-pencil" aria-hidden="true"><br><%= link_to(t('singup'), new_user_registration_path) %></br></span>
+              </button>
+            </li>
+          </ul>
+          <button class="material-button material-button-toggle" type="button">
+            <span class="fa fa-plus" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+	</div>
+</div>
+        <% end %>
+
+  
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2  " >
+      <div id="loader">
+    		<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="lading"></div>
+    </div>
+    </div>
+    <div class="col-lg-8">
+     
+          <%= yield %>
+          
+ 
+    
+     
+
+    </div>
+    <div class="col-lg-2 d-none d-xl-block" >
+     
+		<div id="loader">
+    		<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="lading"></div>
+		
+</div>
+    </div>
+  </div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      
+      
+      <ul class="timeline">
+        <li>
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" src="https://ih0.redbubble.net/image.174928268.6370/flat,800x800,075,f.jpg" alt="">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              
+              <h4 class="subheading">Bootstrap</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+                <%= t('bootstrap') %>
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" src="https://ih0.redbubble.net/image.174928268.6370/flat,800x800,075,f.jpg" alt="">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              
+              <h4 class="subheading">Overview</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+               <%= t('overview') %>
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+        <li>
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" src="https://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png?w=400" alt="">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+             
+              <h4 class="subheading">GitHub</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+               <%= t('github') %>
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <img class="img-circle img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMRSLrM6yLyEcvYSCzRyqGiD22KgAEj5iDPeofS1vWEhqSp5d" alt="">
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+             
+              <h4 class="subheading">Ruby on Rails</h4>
+            </div>
+            <div class="timeline-body">
+              <p class="text-muted">
+               <%= t('rails') %>
+              </p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
